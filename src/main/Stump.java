@@ -45,12 +45,16 @@ public class Stump extends Canvas implements Runnable{
 	//Métodos de inicialização
 	public void initFrame() {
 		frame = new JFrame("Stump");
+		//buttons
 		bt = new Button(20,0,90,30,"BK 1",0);
 		frame.add(bt.getBt());
 		bt = new Button(20,40,90,30,"BK 2",1);
 		frame.add(bt.getBt());
 		bt = new Button(20,80,90,30,"BK 3",2);
 		frame.add(bt.getBt());
+		register();
+		login();
+		//
 		frame.add(this);
 		frame.setResizable(false);
 		frame.pack();
@@ -71,7 +75,7 @@ public class Stump extends Canvas implements Runnable{
 			e.printStackTrace();
 		}
 	}
-	//main
+	//Main
 	public static void main(String[] args) {
 		Stump stump = new Stump();
 		stump.start();
@@ -125,5 +129,15 @@ public class Stump extends Canvas implements Runnable{
 			}
 		}
 		stop();
+	}
+	//Métodos de interação com a camada de negocios
+	public void register() {
+		bt = new Button(WIDTH-350,(HEIGHT/2) - 30,90,30,"Register");
+		frame.add(bt.getBt());
+		
+	}
+	public void login() {
+		bt = new Button(WIDTH-350,(HEIGHT/2) + 10,90,30,"Login");
+		frame.add(bt.getBt());
 	}
 }

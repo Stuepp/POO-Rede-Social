@@ -1,5 +1,7 @@
 package negocio;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import dados.User;
 import dados.Post;
@@ -76,4 +78,18 @@ public class Action {
 	public void unReactToPost(String reactType, Post post) {//Parece errado..
 		post.cancel_reactPost(reactType);
 	}
+	/*
+	public void showPosts() { // a trabalhar no método ainda
+		PreparedStatement ps = con.prepareStatement("SELECT.img.FROM.images.VALUES="+posts.get(0).getImagens());
+		ps.setString(1,posts.get(0).getImagens());
+		ResultSet rs = ps.executeQuery();
+		if(rs != null) {
+			while(rs.next()) {
+				byte[] imgBytes = rs.getBytes(1);
+				//use os dados de alguma forma
+			}
+			rs.close();
+		}
+		ps.close();
+	}*/
 }
