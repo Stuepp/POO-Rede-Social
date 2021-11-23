@@ -73,8 +73,8 @@ public class User {
 		
 		return uniqueCode;
 	}
-	public void delete_Post(Post post) {
-		posts.remove(post);
+	public void delete_Post(int pos) {
+		posts.remove(pos);
 	}
 	public Post share_post(Post post) {//???
 		return post;
@@ -86,10 +86,11 @@ public class User {
 		following.add(user);
 	}
 	public void unfollow_user(User user) {//fazer mecanica de busca
-		int buscar = 0;
-		following.get(buscar).equals(user);
-		//then
-		following.remove(buscar);
+		for(int i = 0;  i < following.size(); i++) {
+			if(user.getUniqueCode() == following.get(i).getUniqueCode()) {
+				following.remove(i);
+			}
+		}
 	}
 	//
 	public boolean equals(Object o) {
